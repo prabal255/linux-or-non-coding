@@ -1,0 +1,67 @@
+Script started on Saturday 08 June 2019 12:08:13 AM IST
+[root@localhost ~]# adduser user1
+[root@localhost ~]# adduser user2
+[root@localhost ~]# cd /home
+[root@localhost home]# mkdir permissions
+[root@localhost home]# ls -ld permissions
+drwxr-xr-x. 2 root root 6 Jun  8 00:09 permissions
+[root@localhost home]# su user
+user1/ user2/ 
+[root@localhost home]# su user1
+[user1@localhost home]$ cd permissions
+[user1@localhost permissions]$ touch p.txt
+touch: cannot touch ‘p.txt’: Permission denied
+[user1@localhost permissions]$ logout
+bash: logout: not login shell: use `exit'
+[user1@localhost permissions]$ cd
+[user1@localhost ~]$ exit
+exit
+[root@localhost home]# chmod u + rwx permissions
+chmod: invalid mode: ‘u’
+Try 'chmod --help' for more information.
+[root@localhost home]# chmod u+rwx permissions
+[root@localhost home]# su user1
+[user1@localhost home]$ cd permissions
+[user1@localhost permissions]$ touch p.txt
+touch: cannot touch ‘p.txt’: Permission denied
+[user1@localhost permissions]$ exit
+exit
+[root@localhost home]# chmod o+rwx permissions
+[root@localhost home]# chmod g+rwx permissions/
+[root@localhost home]# chmod g+rwx permissions
+[root@localhost home]# su user1
+[user1@localhost home]$ cd permissions/
+[user1@localhost permissions]$ touch user1.txt
+[user1@localhost permissions]$ touch 1
+[user1@localhost permissions]$ logout
+bash: logout: not login shell: use `exit'
+[user1@localhost permissions]$ exit
+exit
+[root@localhost home]# su user2
+[user2@localhost home]$ cd permissions/
+[user2@localhost permissions]$ ls
+1  user1.txt
+[user2@localhost permissions]$ rm user1.txt
+rm: remove write-protected regular empty file ‘user1.txt’? y
+[user2@localhost permissions]$ ls
+1
+[user2@localhost permissions]$ touch user2.txt
+[user2@localhost permissions]$ exit
+exit
+[root@localhost home]# chmod +t permissions
+[root@localhost home]# su user1
+[user1@localhost home]$ cd permissions
+[user1@localhost permissions]$ ls
+1  user2.txt
+[user1@localhost permissions]$ rm user2.txt
+rm: remove write-protected regular empty file ‘user2.txt’? yes
+rm: cannot remove ‘user2.txt’: Operation not permitted
+[user1@localhost permissions]$ exit
+exit
+[root@localhost home]# exit
+exit
+
+Script done on Saturday 08 June 2019 12:16:54 AM IST
+[root@localhost ~]# gedit typescript
+
+
