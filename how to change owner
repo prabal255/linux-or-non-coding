@@ -1,0 +1,6 @@
+chown code /test
+
+
+code is the name of the new directory
+/test is yhe name of the directory
+all you have do in root account
