@@ -1,0 +1,47 @@
+[adhoc@localhost ~]$ su root
+Password: 
+[root@localhost adhoc]# cd /home
+[root@localhost home]# mkdir -p a/{b/{d/i/l/m,e/h/k},c/{f/h/k/m,g/j/k/m}}
+[root@localhost home]# ls
+a  adhoc  jack  permissions  priti  project  sticky  user2
+[root@localhost home]# cd a
+[root@localhost a]# ls 
+b  c
+[root@localhost a]# cd c
+[root@localhost c]# ls
+f  g
+[root@localhost c]# cd f
+[root@localhost f]# ls
+h
+[root@localhost f]# cd h
+[root@localhost h]# ls
+k
+
+
+
+"similiary we can check on b side"
+
+
+
+[root@localhost h]# cd
+[root@localhost ~]# cd /home/a
+[root@localhost a]# ls
+b  c
+[root@localhost a]# cd b
+[root@localhost b]# ls
+d  e
+[root@localhost b]# cd d
+[root@localhost d]# ls
+i
+[root@localhost d]# cd i
+[root@localhost i]# ls
+l
+[root@localhost i]# cd
+[root@localhost ~]# cd /home/a/b/e
+[root@localhost e]# ls
+h
+[root@localhost e]# cd h
+[root@localhost h]# ls
+k
+###################################################
+
